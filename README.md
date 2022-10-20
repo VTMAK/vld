@@ -1,19 +1,31 @@
 MAK Specifics:
+
 This is a fork of the Microsoft fork of vld
 
 This works and is tested with VS 2019 using the VS 2017 compiler
 
 Steps to use:
+
 -clone
+
 -Build Release_StaticCrt configuration
+
 -Link against \vld\src\bin\x64\Release-v142\vld.lib
+
 -Copy these files into where your bin64 (or where the exe resides)
- \bin\x64\Release_StaticCrt-v142\vld_x64.dll
- \bin\x64\Release_StaticCrt-v142\vld_x64.pdb
- \bin\x64\Release_StaticCrt-v142\dbghelp.dll
- \bin\x64\Release_StaticCrt-v142\Microsoft.DTfW.DHL.manifest
+
+	\bin\x64\Release_StaticCrt-v142\vld_x64.dll
+  
+	\bin\x64\Release_StaticCrt-v142\vld_x64.pdb
+ 
+	\bin\x64\Release_StaticCrt-v142\dbghelp.dll
+ 
+	\bin\x64\Release_StaticCrt-v142\Microsoft.DTfW.DHL.manifest
+ 
 -Do this at the top of the main file of the project/dll you want to debug:
+
 #define VLD_FORCE_ENABLE 1
+
 #include <vld.h>
 
 
